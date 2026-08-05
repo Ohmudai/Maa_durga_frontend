@@ -19,12 +19,12 @@ export default function HeroSection() {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between flex-2 pt-16 gap-x-32 ">
       {/* left section */}
-      <div className="w-[50%] ">
+      <div className="md:w-[50%] ">
         <p className="flex justify-start items-center text-xs font-semibold text-secondary gap-x-1 ">
           <span className="text-xl">&bull;</span> OPEN NOW AT MILAN CHOWK, MID
           BANESHWOR, KATHMANDU
         </p>
-        <h1 className="text-5xl font-bold text-primary mt-2">
+        <h1 className="md:text-5xl text-4xl font-bold text-primary mt-2">
           Everything Electric,{" "}
           <span className="underline decoration-secondary">
             all in one place
@@ -36,9 +36,9 @@ export default function HeroSection() {
           mission is to provide our customers with the best shopping experience
           and the latest technology at competitive prices.
         </p>
-        <div className="flex flex-col md:flex-row gap-x-4 gap-y-2 justify-end items-center mt-6">
+        <div className="flex flex-col md:flex-row md:gap-x-4 gap-y-2 justify-end items-center mt-6">
           <button
-            className=" flex justify-center items-center gap-x-1 cursor-pointer bg-primary text-white px-6 py-2 rounded-md mt-4 transition-colors duration-300"
+            className=" flex justify-center items-center gap-x-1 cursor-pointer bg-primary text-white px-6 py-2 rounded-md md:mt-4 transition-colors duration-300 md:w-fit w-full"
             onClick={() =>
               window.open(
                 "https://wa.me/917349206895?text=Hi%20I%20want%20to%20know%20about%20your%20products.",
@@ -49,15 +49,19 @@ export default function HeroSection() {
             <FaWhatsapp className="text-green-500 text-2xl" />
             WhatsApp Us
           </button>
-          <button className="flex justify-center items-center gap-x-1 cursor-pointer bg-primary text-white px-6 py-2 rounded-md mt-4 transition-colors duration-300">
+          <button className="flex justify-center items-center gap-x-1 cursor-pointer bg-primary text-white px-6 py-2 rounded-md md:mt-4 transition-colors duration-300 md:w-fit w-full"
+          onClick={()=>{
+            window.open("https://www.google.com/search?kgmid=/g/11zk8m5vt0&hl=en-NP&q=Maa+durga+trade+center&shem=epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/osrp/m5/1&kgs=b934a2139901334d&utm_source=epsd1,ltae,rimspwouoe,sh/x/loc/osrp/m5/1","_blank")
+          }}
+          >
             <FaLocationDot className="text-red-600 text-sm" />
             Visit Us
           </button>
         </div>
       </div>
       {/* Right Section  */}
-      <div className=" w-[50%] bg-primary rounded-xl p-8">
-        <div className="flex justify-between items-center  px-4 py-2">
+      <div className=" md:w-[50%] bg-primary rounded-xl p-8 md:mt-0 mt-10">
+        <div className="flex  justify-between items-center  px-4 py-2">
           <div>
             <small className="text-white font-light">Featured this week</small>
             <p className="text-lg font-semibold text-white">New Arrivals</p>
@@ -73,7 +77,7 @@ export default function HeroSection() {
             return (
               <div
                 key={index}
-                className="p-4 border-2 border-gray-400 flex justify-between  items-center rounded-lg"
+                className="p-4 border-2 border-gray-400 flex flex-col md:flex-row justify-between  items-center rounded-lg"
               >
                 <div>
                   <div>
@@ -83,7 +87,7 @@ export default function HeroSection() {
                     {stock.one_word_desc}
                   </small>
                 </div>
-                <div className="bg-secondary px-3 rounded-xl">
+                <div className="bg-secondary px-3 rounded-xl md:w-fit w-full text-center md:mt-0 mt-4">
                   <p className="text-white">{stock.status}</p>
                 </div>
               </div>
