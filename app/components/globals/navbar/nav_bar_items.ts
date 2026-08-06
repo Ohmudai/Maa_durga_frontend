@@ -6,7 +6,8 @@
   {label:'Brands',href:'/brands'},
   {label:'Gallery',href:'/gallery'},
   { label: "About us", href: "/about-us" },
-  { label: "Contact", href: "/contact" }
+  { label: "Contact", href: "/contact" },
+  { label: "Offers", href: "offers" }
 ];
 
 export default navbarItems;

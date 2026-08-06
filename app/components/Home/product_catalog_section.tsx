@@ -39,7 +39,7 @@ export function ProductCategoryCards({product}: any) {
 export default function ProductCatalogSection() {
     const router = useRouter();
   return (
-    <div className="mt-10">
+    <div className="mt-20">
       <div className="flex flex-col gap-y-4">
         <small className="text-md font-semibold text-secondary">
           Product Catalog

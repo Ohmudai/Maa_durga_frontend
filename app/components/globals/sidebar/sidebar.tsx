@@ -6,21 +6,21 @@ export default function Sidebar({ onClose }: { onClose: () => void }) {
   const pathname = usePathname();
   const firstPath = pathname === "/" ? "/" : `/${pathname.split("/")[1]}`;
   return (
-    <div className="fixed inset-0 z-1">
+    <div className="md:hidden fixed inset-0 z-1">
       {/* overlay */}
-      <div className="absolute inset-0 min-h-screen bg-white/20" onClick={onClose} />
+      <div className="absolute inset-0 min-h-screen bg-white/50 backdrop-blur-lg " onClick={onClose} />
       <div className=" min-h-screen  flex items-start justify-start ">
         <motion.div
           initial={{ x: -300 }}
           animate={{ x: 0 }}
           exit={{ x: -300 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="w-64 min-h-screen rounded-tr-2xl rounded-br-2xl border border-white/80 bg-primary backdrop-blur-lg shadow-xl p-6 flex flex-col justify-between" onClick={(e) => e.stopPropagation()}
+          className="w-64 min-h-screen rounded-tr-2xl rounded-br-2xl border-1 border-white bg-primary backdrop-blur-lg shadow-xl p-6 flex flex-col justify-between" onClick={(e) => e.stopPropagation()}
         >
-          <div>
+          <div >
             <div className="flex items-start justify-between mb-6">
               <h2 className="text-xl font-bold text-white">Menu</h2>
-              <FiX className="text-xl" onClick={onClose} />
+              <FiX className="text-xl text-secondary" onClick={onClose} />
             </div>
 
             <ul className="space-y-4 text-white">
@@ -46,7 +46,7 @@ export default function Sidebar({ onClose }: { onClose: () => void }) {
             </ul>
           </div>
           <div className="flex justify-start ">
-            <button className="bg-primary text-white px-4 py-2 rounded-md">
+            <button className="bg-secondary text-white px-4 py-2 rounded-md">
               Get a Quote
             </button>
           </div>
