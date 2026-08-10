@@ -1,6 +1,5 @@
 
  const navbarItems = [
-  { label: "Home", href: "/home" },
   { label: "Products", href: "/products" },
   { label: "Services", href: "/services" },
   {label:'Brands',href:'/brands'},

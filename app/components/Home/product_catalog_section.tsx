@@ -52,7 +52,7 @@ export default function ProductCatalogSection() {
       </div>
       <div  className="mt-8 grid grid-cols-2 md:grid-cols-4 md:gap-y-0 gap-y-4 justify-items-start align-items-center  gap-x-8 ">
         {products.map((product, index) => (
-          <div key={index} className="cursor-pointer hover:shadow-lg hover:shadow-primary/50 " onClick={() => router.push(`/products?category=${product.category}`)}>
+          <div key={index} className="cursor-pointer hover:shadow-lg hover:shadow-primary/50 rounded-xl " onClick={() => router.push(`/products?category=${product.category}`)}>
             <ProductCategoryCards product={product} />
           </div>
         ))}

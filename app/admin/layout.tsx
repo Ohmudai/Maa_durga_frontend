@@ -1,0 +1,16 @@
+import {ReactNode} from 'react'
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Admin | Maa Durga Electronics",
+   icons: {
+    icon: "/maa_durga_title_favicon.png",
+  },
+};
+export default function AdminLoginLayout({children}:{children:ReactNode}){
+    
+    return(
+        <div>
+            {children}
+        </div>
+    )
+}
