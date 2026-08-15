@@ -1,4 +1,4 @@
-name: Build Maa_duraga App
+name: Build Maa_durga App
 
 on:
   push:

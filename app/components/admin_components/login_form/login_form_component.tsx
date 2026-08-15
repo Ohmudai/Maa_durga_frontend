@@ -1,15 +1,30 @@
 "use client"
 import { useForm } from "react-hook-form";
+import api from "../.././../../lib/axios"
 type LoginFormData = {
   email: string;
   password: string;
 };
 export default function LoginForm() {
       const { register, handleSubmit } = useForm<LoginFormData>();
-        const onSubmit = (data: LoginFormData) => {
-    console.log("Email:", data.email);
-    console.log("Password:", data.password);
+     const onSubmit = async (data: LoginFormData) => {
+    try {
+      const response = await api.post<any>(
+        "/admin/login/",
+        data
+      );
+
+      const { access_token, refresh_token } = response.data.data;
+      localStorage.setItem("access_token",access_token)
+
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
   };
+ const productApi = async ()=>{
+  const response = await api.get<any>("/products/")
+  console.log(response)
+ };
   return (
     <div>
       <div className=" h-screen flex flex-col justify-center items-center">
@@ -53,6 +68,7 @@ export default function LoginForm() {
               </button>
             </div>
           </form>
+          <button onClick={productApi}>Product</button>
         </div>
       </div>
     </div>
