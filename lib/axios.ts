@@ -92,8 +92,6 @@ api.interceptors.response.use(
         // Put new access token on original request
         originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
 
-        // Retry original request
-        console.log("Retrying original request")
         return api(originalRequest);
       } catch (refreshError) {
         return Promise.reject(refreshError);

@@ -14,7 +14,7 @@ export default function LoginForm() {
         data
       );
 
-      const { access_token, refresh_token } = response.data.data;
+      const { access_token } = response.data.data;
       localStorage.setItem("access_token",access_token)
 
     } catch (error) {
