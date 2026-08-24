@@ -1,6 +1,8 @@
 import axios from "axios";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { toast } from "sonner";
+import AdminSidebar from "@/app/components/admin_components/admin_globals/sidebar";
 
 export default async function ProtectedAdminLayout({
   children,
@@ -25,16 +27,19 @@ export default async function ProtectedAdminLayout({
         },
       }
     );
-    return <>{children}</>;
+    
+    return (
+      <div className=" min-h-screen">
+        <AdminSidebar />
+
+        <main className="ml-70 pt-5 min-h-screen">
+          {children}
+        </main>
+      </div>
+    );
 
   }catch (error) {
-  if (axios.isAxiosError(error)) {
-    console.log("AUTH CHECK STATUS:", error.response?.status);
-    console.log("AUTH CHECK DATA:", error.response?.data);
-  } else {
-    console.log("UNKNOWN ERROR:", error);
-  }
-
+  toast.error("Invalid or expired refresh token")
   redirect("/admin/login");
 }
 }

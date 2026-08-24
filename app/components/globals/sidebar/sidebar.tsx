@@ -1,3 +1,4 @@
+
 import navbarItems from "../navbar/nav_bar_items";
 import { FiX } from "react-icons/fi";
 import { usePathname } from "next/navigation";
